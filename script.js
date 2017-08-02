@@ -24,6 +24,21 @@ jQuery(function($){
 		$grid.on( 'arrangeComplete', function( event, filteredItems ) {			
 			isotopeEqualHeights('#iso_products .products', '.loop-item');
 		});
+
+		// bind filter button click
+		$('#product_filters').on( 'click', '.filter', function() {
+			$("#product_filters .filter").removeClass("active");
+			$(this).addClass("active");
+			var filterValue = $( this ).data('filter');
+			$productsgrid.isotope({ filter: filterValue });
+		});
+
+		// bind sort button click
+		$('.product-sort').on( 'change', '.product-sort-select', function() {
+			var sortByValue = $(this).find(":selected").val();
+			console.log(sortByValue);
+			$productsgrid.isotope({ sortBy: sortByValue });
+		});
 	});
 	
 	

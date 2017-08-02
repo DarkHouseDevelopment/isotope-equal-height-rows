@@ -63,7 +63,7 @@ jQuery(function($){
 			}
 		});
 		for(i = 1; i <= row; i++){
-			listingHeight('.products','.loop-item.row-'+i+' .type-product, .loop-item.row-'+i+' .type-product_variation', '.purchase-info');
+			listingHeight('.products','.loop-item.row-'+i+'', '.purchase-info');
 		}
 	}
 	
